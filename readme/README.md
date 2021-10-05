@@ -51,4 +51,4 @@ I started with the 'Home' page to ensure I had the responsive measures in place 
 
 I am having a lot of trouble with the responsive nav bar as well as the Logo img responsiveness, sizing, and placement.
   /*I am afraid I will need to scrap almost 6.5 hours of work to simplify my HTML and CSS, but I believe it would be worth it to have a cleaner/better functioning final product*/
-
+  /*I was correct. Although the initial load up onto a mobile device looks exactly as intended, it is not responsive. The heeader does not grow or shrink and the images leave white space at the bottom with the ability to scroll. I will have to revisit height/width and overall resppnsiveness.*/
