@@ -1,4 +1,4 @@
-/***DRAFT/WORKING COPY AS OF 05OCT2021***/
+***DRAFT/WORKING COPY AS OF 05OCT2021***
 
 This is my first professionally developed website, from design to implementation and to fully operational. 
 
@@ -12,7 +12,7 @@ I started teaching myself these skills in June of this year. As of now, the only
 
 
 
-/*Client Encounters*/
+*Client Encounters*
 
 I made it very clear to the client/owner that I had never made a professional website and that I was still in the early learning phases of website development and design.
 
@@ -30,7 +30,7 @@ As of our last conversations, she has explained that she loves clean adn profess
 
 
 
-/*Design Process*/
+*Design Process*
 
 My first steps into developing a design for this website was to talk to the client and gauge their online presence.
 
@@ -45,7 +45,7 @@ Once a desktop design was chosen I developed a quick mobile design for the home 
 
 
 
-/*Development*/
+*Development*
 
 I started with the 'Home' page to ensure I had the responsive measures in place for a smooth transition between desktop and mobile screens.
 
