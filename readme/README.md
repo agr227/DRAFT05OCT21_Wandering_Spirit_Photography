@@ -61,5 +61,8 @@ I am having a lot of trouble with the responsive nav bar as well as the Logo img
                 
                 
                 - I was correct. Although the initial load up onto a mobile device looks exactly as intended, it is not responsive. The heeader does not grow or shrink and the images leave white space at the bottom with the ability to scroll. I will have to revisit height/width and overall resppnsiveness.
+
+
+After completely starting over I was able to clean up the HTML and CSS. My web page is responsive and fits into vh like I intended it to. CHecking for mobile devices now.
                 
  
