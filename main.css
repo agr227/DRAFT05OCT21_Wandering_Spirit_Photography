@@ -1,0 +1,215 @@
+:root {
+	--white: #ffffff;
+	--accent-100: #f3f9e3;
+	--accent-200: #d3c6a6;
+	--primary: #a78b4a;
+	--accent-600: #534627;
+	--primary-800: #15120a;
+	--black: #000000;
+}
+
+/*Set variables based on clients logo. --primary = Metallic Sunburst, found in the WSP logo lettering. I created a color palette
+on coolers.co and chose some subtle earthy tones for possible accents. Client likes the --white, clean appearance. Want to maintain
+simplicity with --white and --primary, but like the idea of using --primary-800 as the text color to create a more soothing effect.*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Barlow", sans-serif;
+}
+
+/*Setting a viewport rule to eliminate scrolling and to fit all content on visible screen*/
+body {
+	height: fit-content;
+	overflow: hidden;
+}
+
+header {
+	min-height: 179px;
+	max-height: 273px;
+}
+
+/*Company logo formatting. Container is set to flex so the link/img will shrink and grow. Link is set to
+inline-block to allow for img sizing.*/
+.logo-container {
+	display: flex;
+	width: 25%;
+	height: auto;
+	min-height: 150px;
+	max-height: 244px;
+	min-width: 200px;
+	max-width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2rem;
+}
+
+.logo-container a {
+	display: inline-block;
+	width: 100%;
+	height: auto;
+}
+
+.logo-container a img {
+	width: inherit;
+	height: auto;
+}
+
+/*Formatting the spacing of the nav bar and its links. I used auto-margins to create the middle gap and 
+margin/padding-inline to give space on the left and rights.*/
+.nav-container {
+	display: flex;
+	z-index: 100;
+	width: 100%;
+	height: auto;
+	padding-inline: 4rem;
+}
+
+.nav-container ul {
+	display: flex;
+	flex: 1 1 auto;
+	width: 100%;
+}
+
+.nav-container ul li {
+	position: relative;
+	margin-inline: 2rem;
+	width: 90px;
+	height: fit-content;
+	align-self: center;
+	text-align: center;
+	list-style: none;
+}
+
+.nav-container ul li:nth-child(3) {
+	margin-left: auto;
+}
+
+.nav-container ul li a {
+	position: relative;
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: var(--primary-800);
+}
+
+/*Formatting the drop down menu on the nav bar to fit under their respective parent li. Initially set with display:none
+to allow for the hover animation.*/
+.nav-container ul li ul {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background: var(--white);
+	display: none;
+}
+
+.nav-container ul li ul li {
+	margin: 2rem 0 1rem 0;
+	padding: 0;
+	width: 100%;
+}
+
+.nav-container ul li:focus-within > ul,
+.nav-container ul li:hover > ul {
+	display: block;
+}
+
+/*Nav link hover animation. Creates a thin background color layer located at the bottom of the link. Upon hover/focus
+the line then scales to full width using the transition listed.*/
+.nav-container ul li a::before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 1.5px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--primary);
+	transform: scaleX(0);
+	transition: transform 0.3s ease;
+}
+
+.nav-container ul li a:focus::before,
+.nav-container ul li a:hover::before {
+	transform: scaleX(1);
+}
+
+/*Menu icon and actual checkbox are hidden with display:none at desktop sizes. Set checkbox:checked property to display
+nav-container at its initial value. Creates a pop out menu using menu icon at mobile sizes.*/
+#nav-toggle {
+	display: none;
+}
+
+.nav-toggle-img {
+	margin-left: 3rem;
+	cursor: pointer;
+	display: none;
+}
+
+#nav-toggle:checked ~ .nav-container {
+	display: initial;
+}
+
+/*Media query for mobile screens starting at 700px. Nav-container and all child elements are moved into an absolute position
+and switched to display: none. Menu button becomes visible.*/
+
+@media (max-width: 700px) {
+	.nav-container {
+		position: absolute;
+		top: 18%;
+		left: 0;
+		right: 0;
+		padding-top: 2rem;
+		width: 100%;
+		height: auto;
+		display: none;
+	}
+
+	.nav-container ul {
+		display: block;
+		width: 100%;
+	}
+
+	.nav-container ul li {
+		margin: 0 0 2rem 0;
+		text-align: left;
+		width: fit-content;
+	}
+
+	.nav-container ul li:nth-child(3) {
+		margin: 0 0 2rem 0;
+		/*had to unset the auto-margin property used before to split the nav bar*/
+	}
+
+	.nav-container ul li ul {
+		position: relative;
+		width: 100%;
+	}
+
+	.nav-toggle-img {
+		display: block;
+		width: fit-content;
+	}
+}
+
+/*Image slideshow layout and animations. Images in display:grid to fit remaining vh minus the header. Object-fit:cover
+is used so the landscape photographs are not terribly distorted. Given a negative z-index to allow the menu to be seen.*/
+.slideshow {
+	z-index: -1;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	overflow: hidden;
+	position: relative;
+	margin-top: 2rem;
+	max-width: 100%;
+	height: calc(95vh - 266px);
+}
+
+.slideshow .img {
+	width: 100%;
+	height: calc(95vh - 266px);
+	object-fit: cover;
+}
